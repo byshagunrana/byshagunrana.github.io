@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://byshagunrana.github.io/sitemap.xml
