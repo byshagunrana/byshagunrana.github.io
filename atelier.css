@@ -9775,3 +9775,34 @@ a:hover .link-mark i{
   .doorway-weight-card>div{grid-template-columns:145px 1fr 28px}
   .doorway-paper-end{flex-direction:column;gap:8px}
 }
+
+
+/* WORK ROOM AUDIT
+   Explicit project count and a distinct treatment for Project 03. */
+.work-gallery-label{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  padding:0 2px 16px;
+  border-bottom:1px solid rgba(67,55,53,.14);
+  font-size:9px;
+  line-height:1.4;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#7b696d;
+}
+.feature-doorway{
+  color:#fffaf4;
+  background:
+    radial-gradient(circle at var(--glow-x,80%) var(--glow-y,14%),rgba(231,195,195,.22),transparent 23rem),
+    linear-gradient(145deg,#744050,#3f252c);
+}
+.feature-doorway .feature-corner{
+  border-color:rgba(229,192,199,.44);
+}
+@media(max-width:620px){
+  .work-gallery-label{
+    font-size:7.5px;
+  }
+}
