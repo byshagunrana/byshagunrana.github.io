@@ -65,6 +65,11 @@
         const rect = panel.getBoundingClientRect();
         const active = rect.top < window.innerHeight * 0.62 && rect.bottom > window.innerHeight * 0.32;
         panel.classList.toggle('is-active', active);
+        if (active) {
+          const chapter = document.querySelector('.horizontal-chapter');
+          const label = panel.querySelector('.eyebrow')?.textContent?.trim();
+          if (chapter && label) chapter.textContent = 'THE CABINET · ' + label.toUpperCase();
+        }
       });
       return;
     }
@@ -76,6 +81,12 @@
     const progress = Math.min(1, Math.max(0, (-(rect.top - header)) / scrollable));
     const index = Math.min(panels.length - 1, Math.floor(progress * panels.length));
     panels.forEach((panel, i) => panel.classList.toggle('is-active', i === index));
+
+    const chapter = document.querySelector('.horizontal-chapter');
+    const activeEyebrow = panels[index]?.querySelector('.eyebrow')?.textContent?.trim();
+    if (chapter && activeEyebrow) {
+      chapter.textContent = 'THE CABINET · ' + activeEyebrow.toUpperCase();
+    }
   }
 
   if (fine && !reduce) {
