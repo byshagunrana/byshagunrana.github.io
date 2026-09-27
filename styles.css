@@ -90,7 +90,7 @@ button{font:inherit}
 .nav{display:flex;gap:26px;align-items:center;font-size:12px;letter-spacing:.035em}
 .nav a{position:relative;color:var(--ink-soft)}
 .nav a:hover{color:var(--ink)}
-.nav a::after{content:"✦";position:absolute;left:50%;transform:translateX(-50%) scale(.4);opacity:0;bottom:-18px;color:var(--burgundy);font-size:8px;transition:.25s ease}
+.nav a::after{content:"";position:absolute;left:50%;transform:translateX(-50%) scale(.4);opacity:0;bottom:-18px;color:var(--burgundy);font-size:8px;transition:.25s ease}
 .nav a:hover::after,.nav a:focus-visible::after{opacity:1;transform:translateX(-50%) scale(1)}
 .nav-toggle{display:none;background:none;border:0;color:var(--ink);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 
@@ -118,7 +118,7 @@ button{font:inherit}
 }
 .hero-copy{position:relative;z-index:2}
 .hero-copy::after{
-  content:"✦";
+  content:"";
   position:absolute;
   color:var(--brass);
   font-size:17px;
@@ -252,7 +252,7 @@ button{font:inherit}
   color:var(--ink-soft);
   white-space:nowrap;
 }
-.mood-track span::after{content:"✦";margin-left:34px;color:var(--burgundy);font-size:8px;vertical-align:middle}
+.mood-track span::after{content:"";margin-left:34px;color:var(--burgundy);font-size:8px;vertical-align:middle}
 
 .manifesto{
   border-bottom:1px solid var(--line);
@@ -303,7 +303,7 @@ button{font:inherit}
   position:relative;overflow:hidden;
   transition:transform .3s ease,box-shadow .3s ease;
 }
-.interest-card::after{content:"✦";position:absolute;right:28px;top:24px;font-size:10px;opacity:.6}
+.interest-card::after{content:"";position:absolute;right:28px;top:24px;font-size:10px;opacity:.6}
 .interest-card:hover{transform:translateY(-5px) rotate(.25deg);box-shadow:0 18px 50px rgba(71,50,49,.09)}
 .interest-card h3{font-family:var(--serif);font-size:40px;line-height:1.02;font-weight:400;margin:44px 0 16px;max-width:420px}
 .interest-card p{max-width:470px;font-size:14px}
@@ -326,7 +326,7 @@ button{font:inherit}
   box-shadow:0 25px 70px rgba(47,37,36,.13);
 }
 .current-label{border-right:1px solid rgba(255,255,255,.14);padding:38px;font-size:9px;letter-spacing:.17em;color:var(--rose)}
-.current-label::after{content:"✦";display:block;margin-top:18px;color:var(--brass)}
+.current-label::after{content:"";display:block;margin-top:18px;color:var(--brass)}
 .current-content{padding:68px 72px}
 .current-type{text-transform:uppercase;letter-spacing:.15em;font-size:9px;color:var(--rose)}
 .current-content h2{
@@ -397,7 +397,7 @@ button{font:inherit}
 .footer-meta{grid-column:1/-1;font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:rgba(67,55,53,.48);margin:0}
 
 .page-hero{padding:94px 0 78px;border-bottom:1px solid var(--line);position:relative}
-.page-hero::after{content:"✦";position:absolute;right:4%;bottom:26px;color:var(--brass);font-size:12px}
+.page-hero::after{content:"";position:absolute;right:4%;bottom:26px;color:var(--brass);font-size:12px}
 .page-hero .eyebrow{margin-bottom:18px}
 .page-hero h1{font-family:var(--serif);font-size:clamp(52px,6.7vw,92px);line-height:1;letter-spacing:-.015em;font-weight:400;margin:0;max-width:1030px;color:#4c3d3b}
 .page-hero p{max-width:660px;font-size:15px;line-height:1.8;margin-top:25px;color:var(--ink-soft)}
@@ -439,7 +439,7 @@ button{font:inherit}
   box-shadow:0 18px 46px rgba(87,59,60,.08);
   position:relative;
 }
-.personal-card::after{content:"✦";position:absolute;right:28px;top:24px;color:var(--brass)}
+.personal-card::after{content:"";position:absolute;right:28px;top:24px;color:var(--brass)}
 .personal-card dl{margin:26px 0 0}
 .personal-card dl div{display:flex;justify-content:space-between;gap:25px;padding:15px 0;border-top:1px solid var(--line)}
 .personal-card dt{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft)}
@@ -578,7 +578,7 @@ button{font:inherit}
   pointer-events:none;
 }
 .cinema-hero::after{
-  content:"✦";
+  content:"";
   position:absolute;
   top:44%;
   right:9%;
@@ -877,7 +877,7 @@ button{font:inherit}
 .ring-a{inset:22px;animation:slowSpin 18s linear infinite}
 .ring-b{inset:58px;animation:slowSpinReverse 14s linear infinite}
 .ring-a::before,.ring-b::before{
-  content:"✦";
+  content:"";
   position:absolute;
   top:-8px;left:50%;
   color:var(--brass);
