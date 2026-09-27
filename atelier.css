@@ -5306,3 +5306,40 @@ a:hover .link-mark i{
     gap:8px;
   }
 }
+
+
+/* PROJECT CARD METADATA
+   A deliberate rule between labels prevents metadata from reading as one fused phrase. */
+.feature-meta{
+  display:grid;
+  grid-template-columns:max-content minmax(26px,1fr) max-content;
+  column-gap:14px;
+  align-items:center;
+  justify-content:stretch;
+}
+.feature-meta span:first-child{
+  grid-column:1;
+}
+.feature-meta span:last-child{
+  grid-column:3;
+  margin:0;
+  text-align:right;
+}
+.feature-meta::after{
+  content:"";
+  grid-column:2;
+  grid-row:1;
+  width:100%;
+  height:1px;
+  margin:0;
+  background:currentColor;
+  opacity:.22;
+}
+@media(max-width:620px){
+  .feature-meta{
+    grid-template-columns:max-content minmax(18px,1fr) max-content;
+    column-gap:9px;
+    font-size:7.5px;
+    letter-spacing:.1em;
+  }
+}
