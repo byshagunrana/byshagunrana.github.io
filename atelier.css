@@ -8864,3 +8864,37 @@ a:hover .link-mark i{
     gap:8px;
   }
 }
+
+
+/* FEATURED GEO PROJECT + PORTFOLIO CODE SYSTEM */
+.feature-geo{
+  color:#fffaf2;
+  background:
+    radial-gradient(circle at var(--glow-x,80%) var(--glow-y,14%),rgba(192,159,92,.22),transparent 23rem),
+    linear-gradient(145deg,#242321,#111110);
+}
+.feature-geo .feature-corner{
+  border-color:rgba(208,177,110,.45);
+}
+.feature-geo .feature-corner::before,
+.feature-geo .feature-corner::after{
+  border-color:rgba(208,177,110,.24);
+}
+.feature-num{
+  min-width:46px;
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+.project-library-cta{
+  margin-top:30px;
+  display:flex;
+  justify-content:flex-end;
+}
+@media(max-width:620px){
+  .feature-num{
+    min-width:36px;
+  }
+  .project-library-cta{
+    justify-content:flex-start;
+  }
+}
