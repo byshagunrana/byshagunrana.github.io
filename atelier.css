@@ -272,7 +272,7 @@ body:not(.home-immersive):not(.inner-immersive) .site-header{
   animation:atelierOrbit 28s linear infinite;
 }
 .mirror-orbit::before,.mirror-orbit::after{
-  content:"✦";
+  content:"";
   position:absolute;
   color:var(--atelier-brass);
   font-size:12px;
@@ -545,7 +545,7 @@ body:not(.home-immersive):not(.inner-immersive) .site-header{
     linear-gradient(145deg,#71828e,#4e616d);
 }
 .feature-meta::after{
-  content:"◆";
+  content:"";
   color:var(--atelier-brass2);
   margin-left:auto;
   margin-right:14px;
@@ -600,7 +600,7 @@ body:not(.home-immersive):not(.inner-immersive) .site-header{
   position:relative;
 }
 .about-copy .chapter::after{
-  content:"✦";
+  content:"";
   position:absolute;
   right:0;
   top:44px;
