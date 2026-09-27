@@ -7598,3 +7598,172 @@ a:hover .link-mark i{
     gap:8px;
   }
 }
+
+
+/* SCALABLE PROJECT LIBRARY
+   Keeps the homepage curated while the Work room can grow well beyond twenty projects. */
+.project-library{
+  margin-top:92px;
+  margin-bottom:116px;
+  padding-top:72px;
+  border-top:1px solid rgba(67,55,53,.14);
+}
+.project-library-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(320px,.58fr);
+  gap:60px;
+  align-items:end;
+}
+.project-library-head h2{
+  max-width:850px;
+  margin:10px 0 0;
+  font-family:var(--atelier-bodoni);
+  font-size:clamp(46px,5vw,72px);
+  line-height:.98;
+  letter-spacing:-.03em;
+  font-weight:400;
+  color:#4e3f42;
+}
+.project-library-head>p{
+  margin:0 0 5px;
+  max-width:520px;
+  font-size:13px;
+  line-height:1.72;
+  color:var(--ink-soft);
+}
+.project-filters{
+  margin-top:43px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  padding-bottom:21px;
+  border-bottom:1px solid rgba(67,55,53,.14);
+}
+.project-filters button{
+  appearance:none;
+  border:1px solid rgba(106,31,58,.18);
+  background:rgba(255,255,255,.38);
+  color:#66575a;
+  padding:10px 15px;
+  border-radius:999px;
+  font:inherit;
+  font-size:9px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .22s ease,color .22s ease,border-color .22s ease;
+}
+.project-filters button:hover,
+.project-filters button:focus-visible,
+.project-filters button.is-active{
+  color:#fffaf4;
+  background:var(--atelier-wine);
+  border-color:var(--atelier-wine);
+}
+.project-index{
+  border-bottom:1px solid rgba(67,55,53,.14);
+}
+.project-index-row{
+  min-height:144px;
+  display:grid;
+  grid-template-columns:56px minmax(260px,.92fr) minmax(300px,1.12fr) minmax(170px,.48fr);
+  gap:28px;
+  align-items:center;
+  padding:24px 0;
+  border-top:1px solid rgba(67,55,53,.14);
+  transition:background .24s ease,padding .24s ease;
+}
+.project-index-row:hover{
+  padding-left:14px;
+  padding-right:14px;
+  background:rgba(255,255,255,.34);
+}
+.project-index-row[hidden]{
+  display:none !important;
+}
+.project-index-number{
+  font-family:var(--atelier-bodoni);
+  font-size:27px;
+  color:rgba(106,31,58,.42);
+}
+.project-index-title small{
+  display:block;
+  margin-bottom:7px;
+  font-size:8px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#816c71;
+}
+.project-index-title strong{
+  display:block;
+  font-family:var(--atelier-bodoni);
+  font-size:27px;
+  line-height:1.03;
+  font-weight:400;
+  color:#45383b;
+}
+.project-index-row>p{
+  margin:0;
+  font-size:12.5px;
+  line-height:1.64;
+  color:var(--ink-soft);
+}
+.project-index-tags{
+  display:flex;
+  justify-content:flex-end;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.project-index-tags span{
+  padding:7px 10px;
+  border:1px solid rgba(106,31,58,.16);
+  border-radius:999px;
+  font-size:8px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#765f65;
+  background:rgba(255,255,255,.35);
+}
+
+@media(max-width:980px){
+  .project-library-head{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  .project-index-row{
+    grid-template-columns:44px 1fr;
+    gap:14px 20px;
+  }
+  .project-index-row>p,
+  .project-index-tags{
+    grid-column:2;
+  }
+  .project-index-tags{
+    justify-content:flex-start;
+  }
+}
+@media(max-width:620px){
+  .project-library{
+    margin-top:72px;
+    margin-bottom:88px;
+    padding-top:58px;
+  }
+  .project-library-head h2{
+    font-size:43px;
+  }
+  .project-filters{
+    gap:6px;
+  }
+  .project-filters button{
+    padding:9px 11px;
+    font-size:7.5px;
+  }
+  .project-index-row{
+    min-height:auto;
+    padding:22px 0;
+    grid-template-columns:34px 1fr;
+  }
+  .project-index-title strong{
+    font-size:23px;
+  }
+}
