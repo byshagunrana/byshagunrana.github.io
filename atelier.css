@@ -9806,3 +9806,81 @@ a:hover .link-mark i{
     font-size:7.5px;
   }
 }
+
+
+/* HOMEPAGE PROJECT INDEX
+   Every published project is one click from the front page without turning the homepage into a catalogue. */
+.home-project-index{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  border-top:1px solid rgba(67,55,53,.14);
+  border-bottom:1px solid rgba(67,55,53,.14);
+}
+.home-project-index a{
+  min-height:104px;
+  display:grid;
+  grid-template-columns:38px 150px minmax(0,1fr);
+  gap:16px;
+  align-items:center;
+  padding:19px 18px 19px 0;
+  border-bottom:1px solid rgba(67,55,53,.12);
+  transition:background .2s ease,padding .2s ease;
+}
+.home-project-index a:nth-child(odd){
+  border-right:1px solid rgba(67,55,53,.12);
+  padding-right:28px;
+}
+.home-project-index a:nth-child(even){
+  padding-left:28px;
+}
+.home-project-index a:nth-last-child(-n+2){
+  border-bottom:0;
+}
+.home-project-index a:hover{
+  background:rgba(255,255,255,.32);
+}
+.home-project-index span{
+  font-family:var(--atelier-bodoni);
+  font-size:20px;
+  color:rgba(106,31,58,.48);
+}
+.home-project-index small{
+  font-size:8px;
+  line-height:1.45;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#806d72;
+}
+.home-project-index strong{
+  font-family:var(--atelier-bodoni);
+  font-size:20px;
+  line-height:1.05;
+  font-weight:400;
+  color:#4a3c40;
+}
+@media(max-width:820px){
+  .home-project-index{grid-template-columns:1fr}
+  .home-project-index a,
+  .home-project-index a:nth-child(odd),
+  .home-project-index a:nth-child(even){
+    border-right:0;
+    padding-left:0;
+    padding-right:0;
+  }
+  .home-project-index a:nth-last-child(2){
+    border-bottom:1px solid rgba(67,55,53,.12);
+  }
+}
+@media(max-width:520px){
+  .home-project-index a{
+    grid-template-columns:30px 1fr;
+    gap:8px 13px;
+    min-height:94px;
+  }
+  .home-project-index small,
+  .home-project-index strong{
+    grid-column:2;
+  }
+  .home-project-index strong{font-size:19px}
+}
