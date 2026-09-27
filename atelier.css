@@ -1378,3 +1378,314 @@ body:not(.home-immersive):not(.inner-immersive) .site-header{
     padding:80px 0 96px;
   }
 }
+
+
+/* SEPTEMBER POLISH PASS */
+
+html{
+  scroll-behavior:smooth;
+}
+body{
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{
+  background:rgba(107,31,58,.18);
+  color:#2d2024;
+}
+h1,h2,h3{
+  text-wrap:balance;
+}
+a:focus-visible,
+button:focus-visible{
+  outline:1px solid var(--atelier-brass);
+  outline-offset:5px;
+}
+
+/* Keep the interaction elegant. The native pointer is less intrusive over portraits. */
+.cursor-dot{
+  display:none !important;
+}
+
+/* Hero object choreography. Decorative cards now frame the portrait instead of covering it. */
+.stage-mirror{
+  z-index:2;
+}
+.card-lacquer,
+.card-vellum,
+.card-velvet,
+.foil-seal,
+.pearl-string{
+  z-index:4;
+}
+.stage-label{
+  z-index:1;
+}
+
+@media(min-width:981px){
+  .stage-mirror{
+    left:47%;
+  }
+  .card-lacquer{
+    width:164px;
+    height:108px;
+    right:-9%;
+    top:8%;
+    padding:16px;
+    transform:rotate(4deg) translateZ(70px);
+  }
+  .card-lacquer strong{
+    font-size:20px;
+    margin-top:22px;
+  }
+  .card-vellum{
+    width:188px;
+    height:124px;
+    left:-4%;
+    bottom:12%;
+    padding:17px;
+    transform:rotate(-6deg) translateZ(48px);
+  }
+  .card-vellum strong{
+    font-size:19px;
+  }
+  .card-vellum em{
+    font-size:19px;
+    margin-top:8px;
+  }
+  .card-velvet{
+    width:142px;
+    height:172px;
+    right:-6%;
+    bottom:0;
+    padding:16px;
+    transform:rotate(3deg) translateZ(38px);
+  }
+  .card-velvet strong{
+    font-size:18px;
+    margin-top:52px;
+  }
+  .stage-label{
+    right:-5%;
+    top:52%;
+  }
+}
+
+@media(min-width:981px) and (hover:hover) and (pointer:fine){
+  .card-lacquer:hover{
+    transform:rotate(2deg) translateZ(92px) translateY(-7px);
+  }
+  .card-vellum:hover{
+    transform:rotate(-4deg) translateZ(72px) translateY(-7px);
+  }
+  .card-velvet:hover{
+    transform:rotate(1deg) translateZ(64px) translateY(-7px);
+  }
+}
+
+/* Editorial photography should look printed, not pasted in. */
+.culture-photo-card{
+  width:326px;
+  padding:9px 9px 36px;
+  transform:rotate(2.4deg);
+  background:#fffaf2;
+  box-shadow:
+    0 30px 70px rgba(64,38,45,.18),
+    0 0 0 1px rgba(106,31,58,.05);
+}
+.culture-photo-card img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  background:#eee6dd;
+}
+.culture-photo-card figcaption{
+  font-size:19px;
+  bottom:9px;
+}
+
+/* Work page confidence */
+.work-hero{
+  position:relative;
+}
+.work-hero::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:-1px;
+  width:28%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--atelier-brass));
+}
+.method-room{
+  box-shadow:0 34px 90px rgba(35,23,27,.17);
+}
+.method-steps>div{
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+}
+
+/* Thinking page field note */
+.field-note{
+  margin-bottom:104px;
+  min-height:610px;
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  background:
+    radial-gradient(circle at 18% 16%,rgba(215,186,131,.13),transparent 23rem),
+    linear-gradient(135deg,#2b2323,#18322d);
+  color:#fffaf2;
+  overflow:hidden;
+  border-radius:4px 42px 4px 42px;
+  box-shadow:0 34px 90px rgba(45,33,34,.16);
+}
+.field-note-copy{
+  padding:76px 64px 64px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.field-note-copy .eyebrow{
+  color:var(--atelier-brass2);
+}
+.field-note-copy h2{
+  margin:12px 0 24px;
+  max-width:760px;
+  font-family:var(--atelier-bodoni);
+  font-size:clamp(54px,5.7vw,84px);
+  line-height:.94;
+  letter-spacing:-.03em;
+  font-weight:400;
+}
+.field-note-copy>p:not(.eyebrow){
+  max-width:570px;
+  margin:0;
+  color:rgba(255,250,242,.73);
+  font-size:14px;
+  line-height:1.85;
+}
+.field-note-caption{
+  margin-top:auto;
+  padding-top:44px;
+  font-size:8px;
+  line-height:1.55;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:rgba(255,250,242,.48);
+}
+.field-note-image{
+  margin:0;
+  position:relative;
+  min-height:610px;
+  overflow:hidden;
+}
+.field-note-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(24,35,31,.26),transparent 24%),
+    linear-gradient(0deg,rgba(18,28,25,.34),transparent 33%);
+}
+.field-note-image img{
+  width:100%;
+  height:100%;
+  min-height:610px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  filter:saturate(.88) contrast(.98);
+  transform:scale(1.01);
+}
+.field-note-image figcaption{
+  position:absolute;
+  z-index:2;
+  right:30px;
+  bottom:26px;
+  max-width:300px;
+  text-align:right;
+  font-family:var(--script);
+  font-size:25px;
+  line-height:1.02;
+  color:#fff7ec;
+  transform:rotate(-2deg);
+  text-shadow:0 2px 12px rgba(0,0,0,.22);
+}
+
+/* About page: culture with lineage, not generic interests */
+.away-copy{
+  max-width:520px;
+}
+.away-copy p{
+  margin:0 0 18px;
+  font-size:14px;
+  line-height:1.86;
+  color:var(--ink-soft);
+}
+.away-copy p:last-child{
+  margin-bottom:0;
+}
+
+/* Quiet polish across inner pages */
+.page-hero{
+  position:relative;
+}
+.page-hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:72px;
+  height:1px;
+  background:var(--atelier-brass);
+}
+.archive-origin-copy,
+.about-copy,
+.work-hero-grid>div:first-child{
+  position:relative;
+}
+
+@media(max-width:980px){
+  .field-note{
+    grid-template-columns:1fr;
+  }
+  .field-note-copy{
+    min-height:520px;
+  }
+  .field-note-image,
+  .field-note-image img{
+    min-height:520px;
+  }
+}
+
+@media(max-width:620px){
+  .card-lacquer{
+    right:-2%;
+  }
+  .field-note{
+    margin-bottom:76px;
+    border-radius:3px 28px 3px 28px;
+  }
+  .field-note-copy{
+    min-height:auto;
+    padding:54px 28px 48px;
+  }
+  .field-note-copy h2{
+    font-size:48px;
+  }
+  .field-note-caption{
+    margin-top:36px;
+    padding-top:0;
+  }
+  .field-note-image,
+  .field-note-image img{
+    min-height:500px;
+  }
+  .field-note-image figcaption{
+    right:20px;
+    bottom:20px;
+    font-size:22px;
+  }
+}
