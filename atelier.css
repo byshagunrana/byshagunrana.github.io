@@ -1689,3 +1689,275 @@ button:focus-visible{
     font-size:22px;
   }
 }
+
+
+/* QA PASS: VIEWER FIRST
+   Keep every object inside its frame, keep type readable, and remove fragile image treatments. */
+
+.material-card,
+.culture-reference-board,
+.ref-card{
+  box-sizing:border-box;
+}
+
+@media(min-width:981px){
+  /* Hero cards must never leave the editorial border. */
+  .atelier-stage{
+    overflow:visible;
+  }
+  .stage-mirror{
+    left:46%;
+  }
+  .card-lacquer{
+    width:150px;
+    height:108px;
+    right:3.5%;
+    top:10%;
+    padding:15px;
+    transform:rotate(3deg) translateZ(58px);
+  }
+  .card-lacquer strong{
+    font-size:18px;
+    line-height:1.02;
+    margin-top:21px;
+  }
+  .card-vellum{
+    width:178px;
+    height:120px;
+    left:2%;
+    bottom:13%;
+    padding:16px;
+    transform:rotate(-5deg) translateZ(40px);
+  }
+  .card-vellum strong{
+    font-size:18px;
+  }
+  .card-vellum em{
+    font-size:18px;
+    margin-top:7px;
+  }
+  .card-velvet{
+    width:132px;
+    height:158px;
+    right:4%;
+    bottom:5%;
+    padding:15px;
+    transform:rotate(2deg) translateZ(34px);
+  }
+  .card-velvet strong{
+    font-size:16px;
+    line-height:1.04;
+    margin-top:45px;
+  }
+  .stage-label{
+    right:1.5%;
+  }
+
+  /* Room typography is editorial, not billboard scale. */
+  .hpanel{
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+  .hpanel .hpanel-inner{
+    width:100%;
+    grid-template-columns:minmax(0,1fr) minmax(280px,350px);
+    column-gap:64px;
+  }
+  .hpanel h2{
+    font-size:clamp(52px,5.4vw,86px);
+    line-height:.94;
+  }
+  .hpanel-future h2{
+    max-width:760px !important;
+    font-size:clamp(46px,4.1vw,66px) !important;
+    line-height:.98 !important;
+    letter-spacing:-.025em;
+  }
+  .hpanel-future .hpanel-copy{
+    max-width:650px;
+    margin-top:20px;
+  }
+  .hpanel-future .script-note{
+    max-width:230px;
+    font-size:29px !important;
+    line-height:1.05;
+  }
+
+  /* Give chapter labels enough room so they do not look accidentally cut. */
+  .horizontal-top{
+    grid-template-columns:310px 1fr 80px;
+  }
+}
+
+/* Crisp culture board replacing the low resolution photograph. */
+.culture-reference-board{
+  width:320px;
+  min-height:398px;
+  padding:18px;
+  position:relative;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.92),rgba(248,239,229,.97));
+  border:1px solid rgba(77,54,56,.16);
+  box-shadow:0 26px 62px rgba(62,38,43,.14);
+  transform:rotate(1.8deg);
+}
+.culture-reference-board::before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(107,31,58,.08);
+  pointer-events:none;
+}
+.reference-board-top{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  position:relative;
+  z-index:1;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(77,54,56,.12);
+  font-size:7px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(67,49,51,.57);
+}
+.reference-board-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  position:relative;
+  z-index:1;
+  margin-top:13px;
+}
+.ref-card{
+  min-height:116px;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border:1px solid rgba(60,42,44,.08);
+}
+.ref-card small{
+  font-size:7px;
+  letter-spacing:.14em;
+  color:inherit;
+  opacity:.58;
+}
+.ref-card strong{
+  font-family:var(--atelier-bodoni);
+  font-size:22px;
+  line-height:.98;
+  font-weight:400;
+}
+.ref-film{
+  background:#6f203c;
+  color:#fff8ef;
+}
+.ref-tv{
+  background:#d8b7bf;
+  color:#4a363b;
+}
+.ref-print{
+  background:#e9dfbd;
+  color:#493d35;
+}
+.ref-notes{
+  background:#5d7078;
+  color:#fffaf4;
+}
+.culture-reference-board>p{
+  position:relative;
+  z-index:1;
+  margin:14px 2px 0;
+  font-family:var(--atelier-bodoni);
+  font-size:15px;
+  line-height:1.22;
+  font-style:italic;
+  color:#6c5559;
+}
+
+@media(min-width:981px){
+  .hpanel-culture .culture-reference-board{
+    grid-column:2;
+    grid-row:1/5;
+    align-self:center;
+    justify-self:center;
+  }
+}
+
+/* Laptop safety. Nothing should collide simply because browser chrome is tall. */
+@media(min-width:981px) and (max-height:820px){
+  .card-lacquer{
+    top:8%;
+    width:142px;
+    height:98px;
+  }
+  .card-lacquer strong{
+    font-size:17px;
+    margin-top:18px;
+  }
+  .card-velvet{
+    width:124px;
+    height:146px;
+    bottom:4%;
+  }
+  .card-velvet strong{
+    font-size:15px;
+    margin-top:39px;
+  }
+  .hpanel{
+    padding-top:44px;
+    padding-bottom:44px;
+  }
+  .hpanel h2{
+    font-size:clamp(46px,4.9vw,74px);
+  }
+  .hpanel-future h2{
+    font-size:clamp(42px,3.7vw,58px) !important;
+  }
+  .hpanel-copy{
+    margin-top:18px;
+    line-height:1.65;
+  }
+  .culture-reference-board{
+    width:286px;
+    min-height:350px;
+    padding:16px;
+  }
+  .ref-card{
+    min-height:98px;
+  }
+  .ref-card strong{
+    font-size:19px;
+  }
+}
+
+@media(max-width:980px){
+  .culture-reference-board{
+    width:min(320px,86vw);
+    margin:44px auto 0;
+    transform:rotate(1deg);
+  }
+}
+
+@media(max-width:620px){
+  .card-lacquer{
+    right:2%;
+  }
+  .card-velvet{
+    right:2%;
+  }
+  .culture-reference-board{
+    min-height:360px;
+  }
+  .reference-board-grid{
+    gap:7px;
+  }
+  .ref-card{
+    min-height:105px;
+    padding:12px;
+  }
+  .ref-card strong{
+    font-size:19px;
+  }
+}
