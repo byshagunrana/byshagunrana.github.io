@@ -28,6 +28,23 @@
     }, { passive: true });
   }
 
+
+  const filterButtons = [...document.querySelectorAll('[data-project-filter]')];
+  const projectRows = [...document.querySelectorAll('[data-project-tags]')];
+
+  if (filterButtons.length && projectRows.length) {
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.projectFilter || 'all';
+        filterButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+        projectRows.forEach((row) => {
+          const tags = (row.dataset.projectTags || '').split(/\s+/).filter(Boolean);
+          row.hidden = filter !== 'all' && !tags.includes(filter);
+        });
+      });
+    });
+  }
+
   const stage = document.querySelector('.atelier-stage');
   const mirror = stage?.querySelector('.stage-mirror');
   const depthObjects = stage ? [...stage.querySelectorAll('[data-depth]')] : [];
