@@ -847,3 +847,173 @@ body:not(.home-immersive):not(.inner-immersive) .site-header{
   .mirror-orbit,.foil-seal,.atelier-intro-mark{animation:none}
   .atelier-intro{display:none}
 }
+
+
+/* precise cabinet layout so decorative objects never cover copy */
+@media(min-width:981px){
+  .hpanel .hpanel-inner{
+    width:100%;
+    max-width:none;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(330px,420px);
+    grid-template-rows:auto auto auto auto;
+    column-gap:72px;
+    align-items:center;
+  }
+
+  .hpanel .hpanel-inner>.eyebrow{grid-column:1;grid-row:1;align-self:end}
+  .hpanel .hpanel-inner>h2{grid-column:1;grid-row:2;max-width:780px}
+  .hpanel .hpanel-inner>.hpanel-copy{grid-column:1;grid-row:3;max-width:610px}
+  .hpanel .hpanel-inner>.pill-link{grid-column:1;grid-row:4;justify-self:start}
+
+  .hpanel-intro .orbit-word,
+  .hpanel-desire .desire-object,
+  .hpanel-culture .postcard-stack,
+  .hpanel-research .research-stamp,
+  .hpanel-archive .archive-years-art,
+  .hpanel-future .script-note{
+    grid-column:2;
+    grid-row:1/5;
+    position:relative;
+    left:auto;
+    right:auto;
+    top:auto;
+    bottom:auto;
+    align-self:center;
+    justify-self:center;
+  }
+
+  .hpanel-intro .orbit-word{margin:0}
+  .hpanel-desire .desire-object{margin:0}
+  .hpanel-culture .postcard-stack{margin:0;width:400px;height:350px}
+  .hpanel-research .research-stamp{margin:0}
+  .hpanel-archive .archive-years-art{
+    margin:0;
+    width:390px;
+    display:grid;
+    grid-template-columns:repeat(3,auto);
+    gap:4px 10px;
+    transform:rotate(-5deg);
+    justify-content:center;
+    align-items:baseline;
+  }
+  .hpanel-archive .archive-years-art span:first-child{
+    grid-column:1/-1;
+    justify-self:center;
+  }
+  .hpanel-future .script-note{
+    margin:0;
+    max-width:260px;
+    font-size:38px;
+    line-height:1.04;
+    text-align:center;
+  }
+
+  .hpanel-culture h2{
+    max-width:720px !important;
+    font-size:clamp(54px,6vw,94px);
+  }
+  .hpanel-research h2,
+  .hpanel-archive h2,
+  .hpanel-future h2{
+    max-width:760px !important;
+  }
+
+  .horizontal-chapter{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+}
+
+/* first screen compacting for laptop browser chrome */
+@media(min-width:981px) and (max-height:900px){
+  .maison-hero{
+    padding-top:20px;
+    padding-bottom:22px;
+  }
+  .maison-copy{
+    padding-top:26px;
+    padding-bottom:18px;
+  }
+  .maison-copy h1{
+    font-size:clamp(70px,9.3vw,138px);
+  }
+  .maison-role{
+    margin-top:24px;
+  }
+  .maison-actions{
+    margin-top:22px;
+  }
+  .atelier-stage{
+    min-height:470px;
+  }
+  .stage-mirror{
+    width:244px;
+    height:356px;
+  }
+  .mirror-monogram{font-size:78px}
+  .mirror-orbit{
+    width:310px;
+    height:310px;
+  }
+  .card-lacquer{
+    width:174px;
+    height:112px;
+    padding:17px;
+  }
+  .card-lacquer strong{font-size:20px;margin-top:23px}
+  .card-vellum{
+    width:186px;
+    height:124px;
+    padding:17px;
+    bottom:13%;
+  }
+  .card-vellum strong{font-size:19px}
+  .card-vellum em{font-size:20px;margin-top:9px}
+  .card-velvet{
+    width:142px;
+    height:170px;
+    padding:16px;
+  }
+  .card-velvet strong{font-size:18px;margin-top:52px}
+  .foil-seal{
+    width:76px;
+    height:76px;
+    font-size:26px;
+  }
+  .pearl-string{
+    transform:scale(.88) rotate(18deg);
+    transform-origin:left top;
+  }
+  .maison-footline{
+    align-items:center;
+  }
+  .maison-footline .hero-ticket{
+    max-width:300px;
+    padding:15px 18px 14px;
+  }
+  .maison-footline .hero-ticket p{
+    font-size:17px;
+    margin:17px 0 8px;
+  }
+  .maison-footline .issue-note{
+    font-size:13px;
+    max-width:250px;
+  }
+}
+
+/* keep culture notes readable at all desktop widths */
+@media(min-width:981px) and (max-width:1250px){
+  .hpanel .hpanel-inner{
+    grid-template-columns:minmax(0,1fr) 340px;
+    column-gap:42px;
+  }
+  .hpanel-culture .postcard-stack{
+    transform:scale(.88);
+    transform-origin:center;
+  }
+  .hpanel h2{
+    font-size:clamp(50px,6vw,84px);
+  }
+}
