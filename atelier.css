@@ -9884,3 +9884,272 @@ a:hover .link-mark i{
   }
   .home-project-index strong{font-size:19px}
 }
+
+
+/* FINAL SURFABILITY PASS
+   Same visual identity, calmer rhythm, clearer hierarchy, fewer dead zones. */
+
+html{
+  scroll-padding-top:96px;
+}
+.site-header{
+  isolation:isolate;
+}
+.nav a{
+  white-space:nowrap;
+}
+.nav a:hover{
+  letter-spacing:.035em;
+}
+.nav a[aria-current="page"]{
+  color:var(--atelier-wine);
+}
+.nav a[aria-current="page"]::after{
+  opacity:1;
+  transform:translateX(-50%) scale(1);
+}
+
+/* Work room: remove the empty runway between the library and the projects. */
+.work-page .work-hero{
+  padding-top:68px;
+  padding-bottom:54px;
+}
+.work-page .work-hero-top{
+  margin-bottom:44px;
+}
+.work-page .work-hero h1{
+  font-size:clamp(56px,7vw,94px);
+  line-height:.91;
+}
+.work-page .work-gallery{
+  padding-top:58px;
+  padding-bottom:64px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.work-page .work-gallery-label{
+  grid-column:1/-1;
+  margin-bottom:2px;
+}
+.work-page .work-gallery > a.feature-project{
+  grid-column:auto !important;
+  min-height:410px;
+}
+.work-page .work-gallery .feature-title h3{
+  font-size:clamp(38px,4.2vw,62px);
+  line-height:.96;
+}
+.work-page .project-library{
+  margin-top:0;
+  margin-bottom:62px;
+  padding-top:58px;
+}
+.work-page .project-library-head{
+  gap:46px;
+}
+.work-page .project-library-head h2{
+  font-size:clamp(42px,4.5vw,60px);
+  line-height:1;
+}
+.work-page .project-filters{
+  margin-top:32px;
+  padding-bottom:16px;
+}
+.work-page .project-index-row{
+  min-height:116px;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.work-page .project-index-title strong{
+  font-size:24px;
+}
+.work-page .method-room{
+  margin-top:0;
+  margin-bottom:62px;
+  padding:52px;
+  gap:52px;
+}
+.work-page .method-intro h2{
+  font-size:clamp(38px,4.2vw,58px);
+}
+.work-page .method-steps>div{
+  min-height:230px;
+}
+.work-page .work-closing{
+  padding-top:72px;
+  padding-bottom:86px;
+}
+.work-page .work-closing h2{
+  font-size:clamp(40px,5vw,68px);
+}
+
+/* Inner pages: editorial breathing room without empty acreage. */
+.inner-immersive .page-hero{
+  padding-top:72px;
+  padding-bottom:60px;
+}
+.inner-immersive .page-hero h1{
+  font-size:clamp(48px,6vw,78px);
+  line-height:1.01;
+}
+.thinking-page .thinking-hero{
+  padding-top:74px;
+  padding-bottom:62px;
+}
+.thinking-page .thinking-hero h1{
+  font-size:clamp(58px,7.5vw,96px);
+  line-height:.9;
+}
+.thinking-page .note-wall{
+  padding-top:64px;
+  padding-bottom:82px;
+}
+.thinking-page .note-card{
+  min-height:320px;
+}
+.thinking-page .note-main{
+  min-height:658px;
+}
+.about-page .about-grid{
+  padding-top:66px;
+  padding-bottom:88px;
+  gap:72px;
+}
+.about-page .about-copy .chapter{
+  padding-top:34px;
+  padding-bottom:34px;
+}
+.about-page .away-section{
+  padding-top:72px;
+  padding-bottom:88px;
+  gap:70px;
+}
+.archive-page .archive-origin{
+  padding-top:68px;
+  padding-bottom:86px;
+  gap:72px;
+}
+.archive-page .archive-panel{
+  padding-top:70px;
+  padding-bottom:86px;
+  gap:72px;
+}
+.archive-page .archive-closing{
+  padding-top:76px;
+  padding-bottom:92px;
+}
+.contact-page .contact-studio{
+  margin-top:62px;
+  margin-bottom:92px;
+}
+.contact-page .contact-intro,
+.contact-page .contact-ledger{
+  min-height:580px;
+}
+.footer{
+  padding-top:44px;
+  padding-bottom:34px;
+}
+
+/* Clear keyboard navigation everywhere. */
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--atelier-wine);
+  outline-offset:4px;
+}
+
+/* Mobile and tablet rhythm. */
+@media(max-width:980px){
+  .work-page .work-gallery{
+    grid-template-columns:1fr;
+    padding-top:48px;
+    padding-bottom:54px;
+  }
+  .work-page .work-gallery-label{
+    grid-column:auto;
+  }
+  .work-page .work-gallery > a.feature-project{
+    min-height:350px;
+  }
+  .work-page .project-library{
+    padding-top:48px;
+    margin-bottom:50px;
+  }
+  .work-page .method-room{
+    padding:42px 34px;
+    gap:34px;
+  }
+  .thinking-page .note-main{
+    min-height:430px;
+  }
+  .about-page .about-grid,
+  .archive-page .archive-origin,
+  .archive-page .archive-panel{
+    gap:42px;
+  }
+}
+@media(max-width:620px){
+  html{
+    scroll-padding-top:76px;
+  }
+  .work-page .work-hero{
+    padding-top:50px;
+    padding-bottom:42px;
+  }
+  .work-page .work-hero-top{
+    margin-bottom:34px;
+  }
+  .work-page .work-gallery{
+    padding-top:42px;
+    padding-bottom:46px;
+  }
+  .work-page .work-gallery > a.feature-project{
+    min-height:330px;
+  }
+  .work-page .project-library{
+    padding-top:42px;
+    margin-bottom:44px;
+  }
+  .work-page .project-library-head h2{
+    font-size:40px;
+  }
+  .work-page .project-index-row{
+    min-height:auto;
+    padding-top:18px;
+    padding-bottom:18px;
+  }
+  .work-page .method-room{
+    padding:34px 24px;
+    margin-bottom:46px;
+  }
+  .work-page .work-closing{
+    padding-top:58px;
+    padding-bottom:72px;
+  }
+  .inner-immersive .page-hero,
+  .thinking-page .thinking-hero{
+    padding-top:56px;
+    padding-bottom:48px;
+  }
+  .thinking-page .note-wall{
+    padding-top:48px;
+    padding-bottom:64px;
+  }
+  .about-page .about-grid{
+    padding-top:52px;
+    padding-bottom:70px;
+  }
+  .archive-page .archive-origin,
+  .archive-page .archive-panel{
+    padding-top:54px;
+    padding-bottom:68px;
+  }
+  .contact-page .contact-studio{
+    margin-top:44px;
+    margin-bottom:72px;
+  }
+  .footer{
+    padding-top:38px;
+    padding-bottom:30px;
+  }
+}
