@@ -9901,10 +9901,10 @@ html{
 .nav a:hover{
   letter-spacing:.035em;
 }
-.nav a[aria-current="page"]{
+.nav a[aria-current]{
   color:var(--atelier-wine);
 }
-.nav a[aria-current="page"]::after{
+.nav a[aria-current]::after{
   opacity:1;
   transform:translateX(-50%) scale(1);
 }
