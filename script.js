@@ -1,3 +1,18 @@
+
+/* current section navigation */
+const pathParts = window.location.pathname.split('/').filter(Boolean);
+const currentFile = pathParts[pathParts.length - 1] || 'index.html';
+let currentSection = currentFile;
+
+if (pathParts.includes('work') && currentFile !== 'work.html') currentSection = 'work.html';
+if (pathParts.includes('thinking') && currentFile !== 'thinking.html') currentSection = 'thinking.html';
+
+document.querySelectorAll('.nav a').forEach((link) => {
+  const href = (link.getAttribute('href') || '').split('#')[0];
+  const target = href.split('/').pop();
+  if (target === currentSection) link.setAttribute('aria-current', 'page');
+});
+
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 
