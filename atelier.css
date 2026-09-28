@@ -10153,3 +10153,20 @@ button:focus-visible{
     padding-bottom:30px;
   }
 }
+
+
+/* Navigation clarity and restrained interaction */
+.nav a::after{
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:currentColor;
+}
+.work-page .feature-project:hover,
+.home-immersive .feature-project:hover{
+  transform:translateY(-3px);
+}
+.project-index-row:hover{
+  padding-left:8px;
+  padding-right:8px;
+}
