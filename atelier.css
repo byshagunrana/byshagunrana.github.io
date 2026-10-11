@@ -11283,3 +11283,24 @@ button:focus-visible{
 .bs-outcome-grid blockquote{padding-left:20px}
 .bs-outcome-footer{flex-direction:column;gap:12px}
 }
+
+
+/* BRANDSTORM FEATURED WORK TILE */
+.work-gallery .feature-brandstorm{
+  grid-column:1/-1;
+  min-height:390px;
+  color:#fff9f2;
+  background:
+    radial-gradient(circle at var(--glow-x,77%) var(--glow-y,32%),rgba(224,184,167,.34),transparent 21rem),
+    radial-gradient(circle at 82% 76%,rgba(113,58,80,.9),transparent 32rem),
+    linear-gradient(125deg,#2c1425,#693047 72%,#552338);
+}
+.feature-brandstorm .feature-meta{color:rgba(255,240,229,.8)}
+.feature-brandstorm .feature-title h3{max-width:930px;font-size:clamp(3rem,5.4vw,6rem);line-height:.94}
+.feature-brandstorm>p{max-width:730px;line-height:1.6;color:rgba(255,240,229,.86)}
+.feature-brandstorm .feature-corner{border-color:rgba(237,207,177,.45)}
+@media(max-width:700px){
+  .work-gallery .feature-brandstorm{min-height:410px}
+  .feature-brandstorm .feature-title h3{font-size:clamp(2.4rem,10vw,4.2rem)}
+}
+
