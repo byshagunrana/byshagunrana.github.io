@@ -11052,3 +11052,111 @@ button:focus-visible{
   .rom-boundary-grid article{min-height:auto}
   .rom-evidence-pack-grid article{min-height:300px}
 }
+
+/* ==========================================================================
+   SOCIAL PROOF LINKS · FOOTER + CONTACT + EXPERIENCE
+   ========================================================================== */
+.footer-links .footer-external{
+  color:var(--atelier-wine);
+  white-space:nowrap;
+}
+.footer-links .footer-linkedin{
+  position:relative;
+  margin-left:8px;
+  padding-left:18px;
+}
+.footer-links .footer-linkedin::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:1px;
+  height:18px;
+  transform:translateY(-50%);
+  background:rgba(106,31,58,.22);
+}
+.footer-links .footer-external:hover{
+  color:#3f2d31;
+}
+
+.contact-elsewhere{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+}
+.contact-elsewhere>span{
+  margin-right:6px;
+  font-size:8px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(255,249,241,.52);
+}
+.contact-elsewhere a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:38px;
+  padding:0 14px;
+  border:1px solid rgba(255,255,255,.26);
+  border-radius:999px;
+  color:#fff9f1;
+  font-size:11px;
+  letter-spacing:.03em;
+  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.contact-elsewhere a b{
+  color:var(--atelier-brass2);
+  font-weight:400;
+}
+.contact-elsewhere a:hover{
+  transform:translateY(-2px);
+  background:#fff9f1;
+  border-color:#fff9f1;
+  color:var(--atelier-wine);
+}
+
+.experience-entry-actions{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px 24px;
+  margin-top:4px;
+}
+.experience-entry-actions .text-link{
+  margin:0;
+}
+.impact-proof-link{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  margin-top:24px;
+  padding-bottom:4px;
+  border-bottom:1px solid rgba(106,31,58,.34);
+  color:var(--atelier-wine);
+  font:600 10px/1.4 var(--sans);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.impact-proof-link:hover{
+  border-bottom-color:var(--atelier-wine);
+}
+
+@media(max-width:760px){
+  .footer-links .footer-linkedin{
+    margin-left:0;
+    padding-left:0;
+  }
+  .footer-links .footer-linkedin::before{
+    display:none;
+  }
+  .contact-elsewhere{
+    align-items:flex-start;
+  }
+  .contact-elsewhere>span{
+    width:100%;
+  }
+}
