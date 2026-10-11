@@ -11304,3 +11304,35 @@ button:focus-visible{
   .feature-brandstorm .feature-title h3{font-size:clamp(2.4rem,10vw,4.2rem)}
 }
 
+
+/* ORIGINAL FRAGRANCE STUDY FEATURE TILE + BRANDSTORM FOLLOW-UP */
+.feature-study{
+  color:#fffaf2;
+  background:
+    radial-gradient(circle at var(--glow-x,80%) var(--glow-y,23%),rgba(180,133,139,.25),transparent 20rem),
+    radial-gradient(circle at 87% 72%,rgba(160,123,106,.2),transparent 22rem),
+    linear-gradient(133deg,#273d53,#1b2e43 62%,#463349);
+}
+.feature-study::before{opacity:.16;border-color:#e7c4a5}
+.feature-study .feature-meta{color:#e7d2c6;opacity:.94}
+.feature-study .feature-title h3{color:#fff9f2}
+.feature-study>p{color:#e8e0df}
+.feature-study .feature-corner{border-color:rgba(239,206,178,.42)}
+.work-gallery .feature-study{grid-column:1/-1;min-height:380px}
+.work-gallery .feature-study .feature-title h3{max-width:870px;font-size:clamp(3.2rem,5.7vw,6rem)}
+.work-gallery .feature-study>p{max-width:760px}
+.bs-followup{display:flex;justify-content:space-between;align-items:flex-end;gap:45px;margin-top:32px;padding:37px 40px;background:linear-gradient(135deg,#f3e7dd,#e7d7d4);border:1px solid rgba(98,29,56,.14);border-radius:4px 29px 4px 29px}
+.bs-followup>div{max-width:750px}
+.bs-followup span{font:700 .68rem/1.5 var(--sans);letter-spacing:.12em;color:#8c6d67;text-transform:uppercase}
+.bs-followup h3{margin:15px 0;font:400 clamp(2.1rem,3vw,3.6rem)/1.06 var(--atelier-bodoni);color:#402735}
+.bs-followup p{margin:0;color:#6b6066;font:400 .95rem/1.7 var(--sans)}
+.bs-followup a{display:inline-flex;align-items:center;flex-shrink:0;padding:15px 19px;border:1px solid #6a2a47;border-radius:999px;font:700 .72rem/1.4 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:#6a2a47;transition:background .2s ease,color .2s ease}
+.bs-followup a:hover{background:#6a2a47;color:#fff}
+@media(max-width:900px){
+  .bs-followup{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:700px){
+  .work-gallery .feature-study{min-height:430px}
+  .work-gallery .feature-study .feature-title h3{font-size:clamp(2.7rem,10vw,4rem)}
+  .bs-followup{padding:28px 25px;gap:25px}
+}
