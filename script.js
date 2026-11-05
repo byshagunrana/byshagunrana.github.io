@@ -7,6 +7,26 @@ let currentSection = currentFile;
 if (pathParts.includes('work') && currentFile !== 'work.html') currentSection = 'work.html';
 if (pathParts.includes('thinking') && currentFile !== 'thinking.html') currentSection = 'thinking.html';
 
+/* Accessible navigation shared by every page */
+const mainRegion = document.querySelector('main');
+if (mainRegion && !mainRegion.id) mainRegion.id = 'main-content';
+if (mainRegion && !document.querySelector('.skip-link')) {
+  const skipLink = document.createElement('a');
+  skipLink.href = '#main-content';
+  skipLink.className = 'skip-link';
+  skipLink.textContent = 'Skip to main content';
+  document.body.prepend(skipLink);
+}
+const aboutNavLink = document.querySelector('.nav a[href$="about.html"]');
+if (aboutNavLink && !document.querySelector('.nav a[href$="archive.html"]')) {
+  const archiveNavLink = document.createElement('a');
+  const archiveHref = aboutNavLink.getAttribute('href');
+  archiveNavLink.href = archiveHref.startsWith('../') ? '../archive.html' : 'archive.html';
+  archiveNavLink.textContent = 'Archive';
+  aboutNavLink.insertAdjacentElement('afterend', archiveNavLink);
+}
+
+
 document.querySelectorAll('.nav a').forEach((link) => {
   const href = (link.getAttribute('href') || '').split('#')[0];
   const target = href.split('/').pop();
@@ -17,10 +37,26 @@ const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 
 if (navToggle && nav) {
-  navToggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
+  function setMenuOpen(open) {
+    nav.classList.toggle('open', open);
     navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     navToggle.textContent = open ? 'Close' : 'Menu';
+  }
+  navToggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('open')));
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) {
+      setMenuOpen(false);
+      navToggle.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (nav.classList.contains('open') && !nav.contains(event.target) && !navToggle.contains(event.target)) {
+      setMenuOpen(false);
+    }
   });
 }
 
