@@ -1661,3 +1661,144 @@ body.is-leaving .page-curtain{transform:translateY(0)}
   .note-wall{padding-top:62px}
   .note-card,.note-main{min-height:380px;padding:28px}
 }
+
+
+/* November 2026: easier profile navigation and readable evidence-led sections */
+html{scroll-padding-top:104px}
+[id]{scroll-margin-top:104px}
+.skip-link{
+  position:fixed;z-index:10001;top:10px;left:14px;padding:11px 17px;
+  background:#53182c;color:#fff;border-radius:6px;
+  font:600 13px/1.2 var(--sans);transform:translateY(-160%);
+  transition:transform .18s ease;
+}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible,button:focus-visible{
+  outline:3px solid #8e3453;outline-offset:4px;
+}
+.nav a[aria-current="page"]{color:var(--burgundy-dark);font-weight:600}
+.profile-jump-nav{
+  display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+  padding:22px 0 26px;border-bottom:1px solid var(--line);
+}
+.profile-jump-nav a{
+  display:inline-flex;align-items:center;min-height:42px;
+  padding:8px 14px;border:1px solid rgba(122,39,65,.22);
+  background:rgba(255,250,244,.7);border-radius:999px;
+  color:#583f43;font-size:11px;font-weight:600;letter-spacing:.02em;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.profile-jump-nav a:hover,.profile-jump-nav a:focus-visible{
+  background:var(--burgundy-dark);border-color:var(--burgundy-dark);color:white;
+}
+.profile-source-link{
+  display:inline-flex;align-items:center;gap:7px;
+  color:var(--burgundy-dark);font-size:12px;font-weight:600;
+  text-decoration:underline;text-underline-offset:5px;
+}
+.profile-source-link:hover{text-decoration-thickness:2px}
+.profile-france{
+  margin-top:76px;margin-bottom:84px;padding:48px 0 64px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.profile-france-meta{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:24px}
+.profile-france-stamp{
+  color:var(--burgundy);font-size:10px;font-weight:600;letter-spacing:.19em;
+  border:1px solid rgba(122,39,65,.22);padding:7px 12px;border-radius:50px;
+}
+.profile-france-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,6vw,90px);align-items:start}
+.profile-france h2,.profile-learning h2,.profile-education h2{
+  font:400 clamp(36px,4.2vw,58px)/1.06 var(--serif);
+  letter-spacing:-.015em;color:var(--espresso);margin:0 0 18px;
+}
+.profile-france-grid>div>p:not(.eyebrow){max-width:540px;font-size:14px;line-height:1.85}
+.profile-france-detail{
+  background:linear-gradient(145deg,#fffaf4,#f5ebe4);
+  border:1px solid rgba(122,39,65,.15);
+  border-radius:17px 4px 17px 4px;
+  padding:clamp(23px,3vw,39px);
+  box-shadow:0 16px 45px rgba(69,33,39,.045);
+}
+.profile-france-detail h3{
+  font:400 clamp(26px,2.9vw,34px)/1.1 var(--serif);
+  margin:0 0 18px;color:var(--burgundy-dark);
+}
+.profile-france-detail p{margin:0 0 17px}
+.profile-evidence-note{
+  color:var(--ink-soft);font-size:10px!important;line-height:1.65!important;
+  border-top:1px solid rgba(122,39,65,.16);padding-top:15px;
+}
+.profile-learning{
+  padding-top:88px;padding-bottom:90px;
+  border-top:1px solid var(--line);
+}
+.profile-learning-intro{
+  color:var(--ink-soft);max-width:710px;
+  font-size:14px;line-height:1.8;margin-top:8px;
+}
+.profile-learning-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;margin-top:44px;
+}
+.profile-learning-card{
+  display:flex;flex-direction:column;min-width:0;
+  background:linear-gradient(158deg,#fffaf4,#f3ece4);
+  border:1px solid rgba(122,39,65,.14);border-radius:16px 3px 16px 3px;
+  padding:clamp(24px,2.7vw,34px);min-height:248px;
+}
+.profile-learning-year{
+  color:var(--burgundy);font-size:9px;text-transform:uppercase;
+  letter-spacing:.11em;font-weight:600;line-height:1.6;
+}
+.profile-learning-card h3{
+  font:400 clamp(26px,2.5vw,35px)/1.08 var(--serif);
+  color:var(--espresso);margin:23px 0 7px;
+}
+.profile-learning-subject{
+  color:var(--burgundy-dark)!important;font-weight:600!important;
+  font-size:13px!important;line-height:1.55!important;margin:0 0 14px!important;
+}
+.profile-learning-card p:not(.profile-learning-subject){
+  font-size:12px;line-height:1.7;color:var(--ink-soft);margin:0;
+}
+.profile-learning-footer{
+  margin-top:24px;display:flex;justify-content:space-between;gap:20px;
+  align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;
+}
+.profile-learning-footer p{max-width:730px;font-size:12px;line-height:1.7;margin:0}
+.profile-education{
+  display:grid;grid-template-columns:1fr 1fr;gap:7%;
+  padding-top:72px;padding-bottom:86px;border-top:1px solid var(--line);
+}
+.profile-education-details h3{
+  font:400 32px/1.16 var(--serif);margin:0 0 12px;
+}
+.profile-education-details p{font-size:13px;line-height:1.8}
+.profile-education-facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:19px}
+.profile-education-facts span{
+  border:1px solid rgba(122,39,65,.18);border-radius:99px;padding:7px 12px;
+  font-size:10px;letter-spacing:.02em;color:var(--burgundy-dark);background:#fffaf4;
+}
+@media(max-width:980px){
+  .profile-learning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .profile-education{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:620px){
+  html{scroll-padding-top:78px}
+  [id]{scroll-margin-top:78px}
+  .profile-jump-nav{
+    display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;scrollbar-width:thin;gap:8px;
+    padding:14px 0 20px;
+  }
+  .profile-jump-nav a{white-space:nowrap;flex:0 0 auto;font-size:10px;min-height:40px}
+  .profile-france{margin-top:48px;margin-bottom:50px;padding:35px 0 48px}
+  .profile-france-grid{grid-template-columns:1fr;gap:20px}
+  .profile-france-stamp{font-size:8px}
+  .profile-learning{padding-top:56px;padding-bottom:60px}
+  .profile-learning-grid{grid-template-columns:1fr;gap:10px;margin-top:28px}
+  .profile-learning-card{min-height:0;padding:25px}
+  .profile-learning-card h3{margin-top:14px}
+  .profile-education{padding-top:54px;padding-bottom:64px}
+}
+@media(prefers-reduced-motion:reduce){.skip-link{transition:none}.profile-jump-nav a{transition:none}}
